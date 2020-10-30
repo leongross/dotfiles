@@ -132,10 +132,6 @@ set hlsearch                    " search options
 set ignorecase                  "
 set smartcase			""
 
-set wrap			""
-set textwidth=80		" handle long lines
-set formatoptions=qrn1		""
-
 if has('mouse')
   set mouse=a
 endif
