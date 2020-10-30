@@ -1,0 +1,111 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=~/.config/i3blocks/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
+# copy me: ~/.config/i3blocks/i3blocks-contrib/ 
+
+
+align=center
+color=#ffffff
+separator_block_width=15
+markup=pango
+
+
+[memory]
+label=MEM=
+separator=false
+interval=30
+
+
+[memory]
+label=SWAP=
+instance=swap
+separator=false
+interval=30
+
+
+[disk]
+label=HOME=
+#DIR=/mnt/data
+interval=30
+
+
+[iface]
+IFACE=eno1
+color=#00FF00
+interval=10
+separator=false
+
+
+#[wifi]
+#INTERFACE=wlp3s0
+#label=wifi:
+#interval=10
+#separator=false
+
+
+[bandwidth]
+INTERFACE=eno1
+#command=~/.config/i3blocks/bandwidth2/bandwidth2
+interval=1
+INLABEL=↑ 
+OUTLABEL=↓ 
+
+[packages]
+label=P=
+command=pacman -Qq | wc -l
+interval=10
+
+
+[cpu_usage]
+label=CPU 
+interval=1
+min_width=CPU 100.00%
+#separator=false
+
+[time]
+command=date '+%H:%M:%S %d/%m/%Y'
+interval=1
+
+[docker]
+command=~/.config/i3blocks-contrib/docker/docker
+color=#0db7ed
+interval=5
+LABEL=🐳
+
+
+[pavucontrol]
+full_text=pavuc
+command=pavucontrol
+color=#666666
+
+[openvpn]
+color=#d9800b
+label=VPN 
+interval=20
+PID_FILE_FORMAT='/run/openvpn/*.pid'
+
