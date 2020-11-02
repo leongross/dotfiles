@@ -24,6 +24,7 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export LESSHISTFILE=/dev/null
 
 
 # config shortcuts
@@ -48,6 +49,7 @@ alias p="python3"
 alias pe="python3 -c"
 alias pm="sudo pacman $@"
 alias cx="chmod +x"
+alias x="xdg-open"
 function tbu { nc termbin.com 9999 } 
 function tbd { wget "https://termbin.com/$1" -O "tb_"$1 }
 
