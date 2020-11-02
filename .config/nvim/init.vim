@@ -28,6 +28,8 @@ if v:true
     Plug 'tpope/vim-dispatch'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'mhinz/vim-rfc'
+    Plug 'preservim/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
 
     if has('nvim')
 		"plug 'shougo/deoplete.nvim', { 'do': ':updateremoteplugins' }
@@ -41,13 +43,25 @@ if v:true
     call plug#end()
 endif
 
-" enable provider
+
+" vim-devicons
+ let g:webdevicons_enable_airline_tabline = 1
+ let g:webdevicons_conceal_nerdtree_brackets = 1
+
+
+" enable python3 provider
 if !has('python3')
     :! python3 -m pip install --user --upgrade pynvim
 endif
 
 let g:python3_host_prog = '/usr/bin/python3'
 let g:loaded_python_provider = 0	" disable python2 support
+
+
+" NERDTree
+autocmd vimenter * NERDTree
+nn <silent> <C-E> :NERDTreeToggle<CR>
+
 
 " ALE
 " TODO: Fix Python gotodef: https://github.com/dense-analysis/ale/issues/2231
@@ -58,10 +72,10 @@ let g:ale_cpp_ccls_init_options = {
 	    \ }
 
 " ALE keybindings
-nn <silent> <C-d> :ALEGoToDefinition<cr>
-nn <silent> <C-r> :ALEFindReferences<cr>
-nn <silent> <C-a> :ALESymbolSearch<cr>
-nn <silent> <C-h> :ALEHover<cr>
+nn <silent> <C-d> :ALEGoToDefinition<CR>
+nn <silent> <C-r> :ALEFindReferences<CR>
+nn <silent> <C-a> :ALESymbolSearch<CR>
+nn <silent> <C-h> :ALEHover<CR>
 
 " deoplete
 "call deoplete#custom#option('sources', {'_': ['ale'],})

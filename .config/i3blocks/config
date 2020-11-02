@@ -61,17 +61,18 @@ interval=10
 separator=false
 
 
-#[wifi]
-#INTERFACE=wlp3s0
-#label=wifi:
-#interval=10
-#separator=false
+[external]
+label=ext
+color=#ffff1a
+command=curl 'ifconfig.me/ip'
+interval=1
 
 
 [bandwidth]
 INTERFACE=eno1
 #command=~/.config/i3blocks/bandwidth2/bandwidth2
 interval=1
+min_width=_100K_100K
 INLABEL=↑ 
 OUTLABEL=↓ 
 
@@ -79,6 +80,7 @@ OUTLABEL=↓
 label=P=
 command=pacman -Qq | wc -l
 interval=10
+min_width='P=1000'
 
 
 [cpu_usage]
@@ -108,4 +110,4 @@ color=#d9800b
 label=VPN 
 interval=20
 PID_FILE_FORMAT='/run/openvpn/*.pid'
-
+seperator=true
