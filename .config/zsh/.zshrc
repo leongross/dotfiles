@@ -51,9 +51,10 @@ alias pd="pydoc"
 alias pm="sudo pacman $@"
 alias cx="chmod +x"
 alias x="xdg-open"
+alias ff="firefox"
 function tbu { nc termbin.com 9999 } 
 function tbd { wget "https://termbin.com/$1" -O "tb_"$1 }
-
+alias z="zathura"
 
 # system utils
 alias aslr_on="echo 0 | sudo tee /proc/sys/kernel/randomize_va_space"
